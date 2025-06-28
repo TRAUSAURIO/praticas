@@ -1,20 +1,25 @@
 # Sistema de Gestión de Menú y Pedidos - Restaurante
 
-Este proyecto es una práctica de laboratorio que simula un sistema básico de gestión de menús y pedidos para un restaurante, desarrollado en Python.
+Este proyecto corresponde a una práctica de laboratorio, cuyo propósito es simular un sistema básico de gestión de menús y procesamiento de pedidos en un restaurante. Está desarrollado en lenguaje Python y utiliza estructuras fundamentales como listas, tuplas y diccionarios.
+
+---
 
 ## Objetivo
 
-Aplicar conocimientos de:
+Aplicar conocimientos básicos de programación en Python, tales como:
 
 - Diccionarios anidados
 - Tuplas
 - Listas
-- Condicionales
-- Bucles
-- Entrada de usuario
+- Condicionales (`if`, `else`)
+- Bucles (`while`)
+- Entrada de datos con `input()`
 
-## Codigo
+---
 
+## Código fuente
+
+```python
 # main.py
 
 # -----------------------------
@@ -60,7 +65,7 @@ menu_restaurante = {
     }
 }
 
-
+# Función para mostrar el menú del restaurante
 def mostrar_menu(menu):
     """Muestra el menú del restaurante."""
     print("\n======= MENÚ DEL RESTAURANTE =======\n")
@@ -69,15 +74,14 @@ def mostrar_menu(menu):
         ingredientes = ", ".join(datos["ingredientes"])
         print(f"  Ingredientes: {ingredientes}\n")
 
-
 # Mostrar el menú inicial
 mostrar_menu(menu_restaurante)
 
-# Iniciar variables del pedido
+# Inicialización de variables del pedido
 pedido_actual = []
 total_cuenta = 0.0
 
-# Bucle para capturar pedidos del usuario
+# Bucle principal para capturar pedidos
 while True:
     entrada = input("Escriba el nombre del plato (o 'fin' para terminar): ").strip().lower()
     if entrada == "fin":
@@ -90,7 +94,7 @@ while True:
     else:
         print("Ese plato no está en el menú. Intente con otro.\n")
 
-# Mostrar resumen del pedido
+# Mostrar el resumen del pedido realizado
 print("\n========= RESUMEN DEL PEDIDO =========\n")
 if pedido_actual:
     for p in pedido_actual:
@@ -98,4 +102,3 @@ if pedido_actual:
     print(f"\nTotal a pagar: ${total_cuenta:.2f}")
 else:
     print("No se realizaron pedidos.")
-
